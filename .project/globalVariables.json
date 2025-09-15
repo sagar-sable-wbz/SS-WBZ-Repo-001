@@ -1,0 +1,10 @@
+[
+  {
+    "Constant": false,
+    "Name": "db_Connection",
+    "TypeFullyQualifiedName": "UiPath.Database.DatabaseConnection, UiPath.Database, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": null,
+    "IsLiteral": false
+  }
+]

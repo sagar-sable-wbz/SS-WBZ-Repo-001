@@ -4,6 +4,7 @@
   "description": "SQL and Desktop Automation",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Database.Activities": "[2.0.0]",
     "UiPath.Excel.Activities": "[3.0.1]",
     "UiPath.System.Activities": "[25.4.3]",
     "UiPath.Testing.Activities": "[25.4.0]",

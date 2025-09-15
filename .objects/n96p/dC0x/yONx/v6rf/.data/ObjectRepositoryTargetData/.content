@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="0UNkK7B6vECDqPSD_Ty_3Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="21607043-ca36-46db-87fd-5ddae273cba2" CvElementArea="139, 93, 128, 20" CvType="InputBox" DesignTimeRectangle="139, 93, 128, 20" ElementType="InputBox" FuzzySelectorArgument="&lt;wnd ctrlname='tabControl1' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='tabPagePeople' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='groupBox5' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='textBoxPeopleFirstName' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;" Guid="6c85cf5e-3158-4ae6-b3a0-1126bbc59dac" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='mycrm.exe' ctrlname='Form1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="21607043-ca36-46db-87fd-5ddae273cba2" CvTextArea="60, 93, 27, 12" CvTextArgument="First:" CvType="Text" DesignTimeRectangle="59, 93, 29, 17" ElementType="Text" FuzzySelectorArgument="&lt;wnd ctrlname='tabControl1' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='tabPagePeople' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='groupBox5' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='label2' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' check:text='Firs&amp;amp;t:' /&gt;" Guid="f6680818-bca8-4ff8-a347-4a0bbddbf65b" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="9506a5322d393b99a3b8394e1325131d.png" xmlns="">0btAS4AeD9EaqNA1kN2EGAA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

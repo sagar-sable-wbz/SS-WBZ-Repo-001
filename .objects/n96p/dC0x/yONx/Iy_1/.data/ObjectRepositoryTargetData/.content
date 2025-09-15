@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="LN8kNy3vRkOiHOBhOf_t7w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="203bac3e-dcd5-496e-a508-6043d92054d9" CvElementArea="139, 115, 127, 20" CvType="InputBox" DesignTimeRectangle="139, 116, 128, 20" ElementType="InputBox" FuzzySelectorArgument="&lt;wnd ctrlname='tabControl1' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='tabPagePeople' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='groupBox5' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='textBoxPeopleLastName' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;" Guid="1e5e00db-14e6-4c73-b60a-08ac212541fe" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='mycrm.exe' ctrlname='Form1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="203bac3e-dcd5-496e-a508-6043d92054d9" CvTextArea="60, 116, 25, 12" CvTextArgument="Last:" CvType="Text" DesignTimeRectangle="59, 116, 29, 17" ElementType="Text" FuzzySelectorArgument="&lt;wnd ctrlname='tabControl1' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='tabPagePeople' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='groupBox5' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='label1' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;ctrl name='Last:' role='text' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Last:' /&gt;" Guid="0f539061-9c75-4671-8947-485e247e88b2" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="7aadefb69f1a46e669db6380f12b5978.png" xmlns="">0P44K1XO_IUKmPJR2qh9urw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,12 @@
+﻿{
+  "Name": "My CRM (Sample App)",
+  "Type": "App",
+  "Id": "n96pypJDJU-nVJx2TmdjUA",
+  "Reference": "akKlNwC0zUCg9cAa6_jkgA/n96pypJDJU-nVJx2TmdjUA",
+  "Created": "2025-09-14T18:18:16.6467926Z",
+  "Updated": "2025-09-14T18:18:16.6467926Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

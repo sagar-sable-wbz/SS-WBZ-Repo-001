@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Save Ctrl+S",
+  "Type": "Element",
+  "Id": "DbgeUCGlykmYo4oediD3qQ",
+  "Reference": "akKlNwC0zUCg9cAa6_jkgA/DbgeUCGlykmYo4oediD3qQ",
+  "ParentRef": "akKlNwC0zUCg9cAa6_jkgA/yONxRF9gAkehrVW-JjiSXw",
+  "Created": "2025-09-14T18:21:47.2803647Z",
+  "Updated": "2025-09-14T18:21:47.2803647Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

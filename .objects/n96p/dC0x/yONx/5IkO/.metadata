@@ -1,0 +1,13 @@
+﻿{
+  "Name": "File",
+  "Type": "Element",
+  "Id": "5IkOoEyoeEujtEikxEQOGw",
+  "Reference": "akKlNwC0zUCg9cAa6_jkgA/5IkOoEyoeEujtEikxEQOGw",
+  "ParentRef": "akKlNwC0zUCg9cAa6_jkgA/yONxRF9gAkehrVW-JjiSXw",
+  "Created": "2025-09-14T18:21:19.4862416Z",
+  "Updated": "2025-09-14T18:21:19.4862416Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

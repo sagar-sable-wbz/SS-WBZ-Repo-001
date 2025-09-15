@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="gthOb9jDHEqSsleR3ZG30Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="2e248f04-8de1-4af6-b5eb-94bb2ab12d77" CvElementArea="138, 139, 14, 14" CvTextArea="155, 140, 26, 12" CvTextArgument="Male" CvType="RadioButton" DesignTimeRectangle="139, 138, 56, 19" ElementType="RadioButton" FullSelectorArgument="&lt;wnd ctrlname='tabControl1' /&gt;&lt;wnd ctrlname='tabPagePeople' /&gt;&lt;wnd ctrlname='groupBox5' /&gt;&lt;wnd ctrlname='radioButtonMale' /&gt;" Guid="27acc5d9-037c-4894-b76d-eb2316dd2ae4" ScopeSelectorArgument="&lt;wnd app='mycrm.exe' ctrlname='Form1' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="b9ff44de7f88bb7c231d6dd6ccbaf881.png" xmlns="">0EGlEhh_TO06MD9SExy7hZA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

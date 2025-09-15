@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
@@ -37,10 +37,20 @@
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="80">
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -78,16 +88,314 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="375.2,389.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="925.2,3837.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="333.6,56" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="483.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="483.2,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="My CRM (Sample App)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="483.2,3476" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="5a698c23-6168-4f12-985c-851ffb96aa52" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,3185.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Firs&amp;t'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="5a698c23-6168-4f12-985c-851ffb96aa52" Text="[in_TransactionItem.SpecificContent(&quot;First Name&quot;).ToString]" Version="V4">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable CVScreenId="21607043-ca36-46db-87fd-5ddae273cba2" ContentHash="0UNkK7B6vECDqPSD_Ty_3Q" CvElementArea="139, 93, 128, 20" CvType="InputBox" DesignTimeRectangle="139, 93, 128, 20" ElementType="InputBox" FuzzySelectorArgument="&lt;wnd ctrlname='tabControl1' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='tabPagePeople' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='groupBox5' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='textBoxPeopleFirstName' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;" Guid="6c85cf5e-3158-4ae6-b3a0-1126bbc59dac" InformativeScreenshot="9506a5322d393b99a3b8394e1325131d.png" IsResponsive="True" Reference="akKlNwC0zUCg9cAa6_jkgA/v6rfuUFAnE2UgeR67ks-gA" ScopeSelectorArgument="&lt;wnd app='mycrm.exe' ctrlname='Form1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="21607043-ca36-46db-87fd-5ddae273cba2" CvTextArea="60, 93, 27, 12" CvTextArgument="First:" CvType="Text" DesignTimeRectangle="59, 93, 29, 17" ElementType="Text" FuzzySelectorArgument="&lt;wnd ctrlname='tabControl1' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='tabPagePeople' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='groupBox5' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='label2' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' check:text='Firs&amp;amp;t:' /&gt;" Guid="f6680818-bca8-4ff8-a347-4a0bbddbf65b" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Last'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="5a698c23-6168-4f12-985c-851ffb96aa52" Text="[in_TransactionItem.SpecificContent(&quot;Last Name&quot;).ToString]" Version="V4">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable CVScreenId="203bac3e-dcd5-496e-a508-6043d92054d9" ContentHash="LN8kNy3vRkOiHOBhOf_t7w" CvElementArea="139, 115, 127, 20" CvType="InputBox" DesignTimeRectangle="139, 116, 128, 20" ElementType="InputBox" FuzzySelectorArgument="&lt;wnd ctrlname='tabControl1' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='tabPagePeople' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='groupBox5' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='textBoxPeopleLastName' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;" Guid="1e5e00db-14e6-4c73-b60a-08ac212541fe" InformativeScreenshot="7aadefb69f1a46e669db6380f12b5978.png" IsResponsive="True" Reference="akKlNwC0zUCg9cAa6_jkgA/Iy_1xUzrDk2DJnwQ2LNBrQ" ScopeSelectorArgument="&lt;wnd app='mycrm.exe' ctrlname='Form1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="203bac3e-dcd5-496e-a508-6043d92054d9" CvTextArea="60, 116, 25, 12" CvTextArgument="Last:" CvType="Text" DesignTimeRectangle="59, 116, 29, 17" ElementType="Text" FuzzySelectorArgument="&lt;wnd ctrlname='tabControl1' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='tabPagePeople' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='groupBox5' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='label1' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;ctrl name='Last:' role='text' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Last:' /&gt;" Guid="0f539061-9c75-4671-8947-485e247e88b2" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Male'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5a698c23-6168-4f12-985c-851ffb96aa52" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="2e248f04-8de1-4af6-b5eb-94bb2ab12d77" ContentHash="gthOb9jDHEqSsleR3ZG30Q" CvElementArea="138, 139, 14, 14" CvTextArea="155, 140, 26, 12" CvTextArgument="Male" CvType="RadioButton" DesignTimeRectangle="139, 138, 56, 19" ElementType="RadioButton" FullSelectorArgument="&lt;wnd ctrlname='tabControl1' /&gt;&lt;wnd ctrlname='tabPagePeople' /&gt;&lt;wnd ctrlname='groupBox5' /&gt;&lt;wnd ctrlname='radioButtonMale' /&gt;" Guid="27acc5d9-037c-4894-b76d-eb2316dd2ae4" InformativeScreenshot="b9ff44de7f88bb7c231d6dd6ccbaf881.png" Reference="akKlNwC0zUCg9cAa6_jkgA/rce2L1NBhECEC3jZobYWgQ" ScopeSelectorArgument="&lt;wnd app='mycrm.exe' ctrlname='Form1' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'WindowsForms10.EDIT.app...'" EmptyField="True" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_TransactionItem.SpecificContent(&quot;Address Line 1&quot;).ToString]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fadfa745-b8e8-4391-ad55-df6bc680466f" InformativeScreenshot="61d038948e37e6552d82b91420dc6823" Selector="&lt;wnd ctrlname='tabControl1' /&gt;&lt;wnd ctrlname='tabPagePeople' /&gt;&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='textBoxPeopleAddLine1' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'WindowsForms10.EDIT.app...'" EmptyField="True" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[in_TransactionItem.SpecificContent(&quot;Address Line 2&quot;).ToString]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9af0cc4a-4e7e-44d9-8fcb-374295a646a4" InformativeScreenshot="49f6fadac9cc47abbc7465a6c948c6ba" Selector="&lt;wnd ctrlname='tabControl1' /&gt;&lt;wnd ctrlname='tabPagePeople' /&gt;&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='textBoxPeopleAddLine2' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'WindowsForms10.EDIT.app...'" EmptyField="True" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[in_TransactionItem.SpecificContent(&quot;City&quot;).ToString]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c3748d74-c6fc-4ad0-88c2-1e77d1dcfc72" InformativeScreenshot="1d3b2d46f3cdce871c8d5bcfa46607a2" Selector="&lt;wnd ctrlname='tabControl1' /&gt;&lt;wnd ctrlname='tabPagePeople' /&gt;&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='textBoxPeopleAddressCity' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <uix:NSelectItem DisplayName="Select Item '&amp;State'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189.6" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[in_TransactionItem.SpecificContent(&quot;State&quot;).ToString]" ScopeIdentifier="5a698c23-6168-4f12-985c-851ffb96aa52" Version="V4">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="50">
+                  <x:String xml:space="preserve">  </x:String>
+                  <x:String>AL</x:String>
+                  <x:String>AK</x:String>
+                  <x:String>AZ</x:String>
+                  <x:String>AR</x:String>
+                  <x:String>CA</x:String>
+                  <x:String>CO</x:String>
+                  <x:String>CT</x:String>
+                  <x:String>DE</x:String>
+                  <x:String>FL</x:String>
+                  <x:String>GA</x:String>
+                  <x:String>HI</x:String>
+                  <x:String>ID</x:String>
+                  <x:String>IL</x:String>
+                  <x:String>IN</x:String>
+                  <x:String>IA</x:String>
+                  <x:String>KS</x:String>
+                  <x:String>KY</x:String>
+                  <x:String>LA</x:String>
+                  <x:String>ME</x:String>
+                  <x:String>MD</x:String>
+                  <x:String>MA</x:String>
+                  <x:String>MI</x:String>
+                  <x:String>MN</x:String>
+                  <x:String>MS</x:String>
+                  <x:String>MO</x:String>
+                  <x:String>MT</x:String>
+                  <x:String>NE</x:String>
+                  <x:String>NV</x:String>
+                  <x:String>NH</x:String>
+                  <x:String>NJ</x:String>
+                  <x:String>NM</x:String>
+                  <x:String>NY</x:String>
+                  <x:String>NC</x:String>
+                  <x:String>ND</x:String>
+                  <x:String>OH</x:String>
+                  <x:String>OK</x:String>
+                  <x:String>OR</x:String>
+                  <x:String>PA</x:String>
+                  <x:String>RI</x:String>
+                  <x:String>SC</x:String>
+                  <x:String>SD</x:String>
+                  <x:String>TN</x:String>
+                  <x:String>TX</x:String>
+                  <x:String>UT</x:String>
+                  <x:String>VT</x:String>
+                  <x:String>VA</x:String>
+                  <x:String>WA</x:String>
+                  <x:String>WV</x:String>
+                  <x:String>WI</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable CVScreenId="2e248f04-8de1-4af6-b5eb-94bb2ab12d77" ContentHash="HSNUT__RnU6_Nywas-AUCQ" CvElementArea="138, 264, 80, 21" CvType="InputBox" DesignTimeRectangle="139, 264, 80, 21" ElementType="DropDown" FullSelectorArgument="&lt;wnd ctrlname='tabControl1' /&gt;&lt;wnd ctrlname='tabPagePeople' /&gt;&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='comboBoxPeopleAddressState' /&gt;&lt;ctrl name='State:' role='combo box' /&gt;" Guid="52d5aaa0-bdbe-480f-9a5b-e52e89db28d7" InformativeScreenshot="c0439f3a5f8eedbd888a99f29ed24dd1.png" Reference="akKlNwC0zUCg9cAa6_jkgA/TOkr1ileWUi6anLS4ZqkkA" ScopeSelectorArgument="&lt;wnd app='mycrm.exe' ctrlname='Form1' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="2e248f04-8de1-4af6-b5eb-94bb2ab12d77" CvTextArea="60, 264, 29, 12" CvTextArgument="State:" CvType="Text" DesignTimeRectangle="59, 264, 34, 17" ElementType="Text" FuzzySelectorArgument="&lt;wnd ctrlname='tabControl1' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='tabPagePeople' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='groupBox1' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' /&gt;&lt;wnd ctrlname='label6' matching:ctrlname='fuzzy' fuzzylevel:ctrlname='0.0' check:text='&amp;amp;State:' /&gt;" Guid="b0c17bd4-0110-47b3-917c-b5cd1bbbb651" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'WindowsForms10.EDIT.app...'" EmptyField="True" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[in_TransactionItem.SpecificContent(&quot;Zip&quot;).ToString]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3209c808-61e3-4799-8e82-2558d3a028cc" InformativeScreenshot="543c87dfe5215e515e20263fb5e16cc3" Selector="&lt;wnd ctrlname='tabControl1' /&gt;&lt;wnd ctrlname='tabPagePeople' /&gt;&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='textBoxPeopleAddressZip' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'WindowsForms10.EDIT.app...'" EmptyField="True" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="TypeInto_5" Text="[in_TransactionItem.SpecificContent(&quot;Home Phone&quot;).ToString]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a99df9b9-20d7-4425-9ba3-33156abf1558" InformativeScreenshot="2dc748b8a801254ce4e58c739ea030ff" Selector="&lt;wnd ctrlname='tabControl1' /&gt;&lt;wnd ctrlname='tabPagePeople' /&gt;&lt;wnd ctrlname='groupBox2' /&gt;&lt;wnd ctrlname='textBoxPeopleHomePhone' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'WindowsForms10.EDIT.app...'" EmptyField="True" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="TypeInto_6" Text="[in_TransactionItem.SpecificContent(&quot;Work Phone&quot;).ToString]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a99df9b9-20d7-4425-9ba3-33156abf1558" InformativeScreenshot="ddc9501f42840baa53e1ea6d2d187039" Selector="&lt;wnd ctrlname='tabControl1' /&gt;&lt;wnd ctrlname='tabPagePeople' /&gt;&lt;wnd ctrlname='groupBox2' /&gt;&lt;wnd ctrlname='textBoxPeopleWorkPhone' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'WindowsForms10.EDIT.app...'" EmptyField="True" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="TypeInto_7" Text="[in_TransactionItem.SpecificContent(&quot;Mobile Phone&quot;).ToString]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a99df9b9-20d7-4425-9ba3-33156abf1558" InformativeScreenshot="6f69e0baad1259d892ae5992a780da58" Selector="&lt;wnd ctrlname='tabControl1' /&gt;&lt;wnd ctrlname='tabPagePeople' /&gt;&lt;wnd ctrlname='groupBox2' /&gt;&lt;wnd ctrlname='textBoxPeopleMobilePhone' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'WindowsForms10.EDIT.app...'" EmptyField="True" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="TypeInto_8" Text="[in_TransactionItem.SpecificContent(&quot;Personal Email&quot;).ToString]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a99df9b9-20d7-4425-9ba3-33156abf1558" InformativeScreenshot="17a85ad729f49e263e3360c95cea52bf" Selector="&lt;wnd ctrlname='tabControl1' /&gt;&lt;wnd ctrlname='tabPagePeople' /&gt;&lt;wnd ctrlname='groupBox4' /&gt;&lt;wnd ctrlname='textBoxPeoplePersonalEmail' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'WindowsForms10.EDIT.app...'" EmptyField="True" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="TypeInto_9" Text="[in_TransactionItem.SpecificContent(&quot;Work Email&quot;).ToString]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a99df9b9-20d7-4425-9ba3-33156abf1558" InformativeScreenshot="b9c56c9c13fcb475941f1dbcb1307584" Selector="&lt;wnd ctrlname='tabControl1' /&gt;&lt;wnd ctrlname='tabPagePeople' /&gt;&lt;wnd ctrlname='groupBox4' /&gt;&lt;wnd ctrlname='textBoxPeopleWorkEmail' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'File'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5a698c23-6168-4f12-985c-851ffb96aa52" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="21607043-ca36-46db-87fd-5ddae273cba2" ContentHash="AdqMFm7CE02b4O9vk-Te5g" CvTextArea="9, 29, 20, 12" CvTextArgument="File" CvType="Text" DesignTimeRectangle="3, 26, 32, 19" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='File' role='menu item' /&gt;" Guid="e1fa9f30-132a-4889-89c3-b1e6c519b451" InformativeScreenshot="427ffc8a56dc79f6bd5f8183edff3e9b.png" Reference="akKlNwC0zUCg9cAa6_jkgA/5IkOoEyoeEujtEikxEQOGw" ScopeSelectorArgument="&lt;wnd app='mycrm.exe' ctrlname='Form1' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save Ctrl+S'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,218.4" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5a698c23-6168-4f12-985c-851ffb96aa52" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="8fe1a352-4f53-4c2b-86ef-894caef756cc" ContentHash="0VJHx9_oBEK4TlEspOxzcw" CvTextArea="37, 157, 132, 12" CvTextArgument="Save Ctrl+S" CvType="Text" DesignTimeRectangle="3, 153, 188, 22" FullSelectorArgument="&lt;ctrl name='File' role='popup menu' /&gt;&lt;ctrl automationid='265' /&gt;" Guid="b3206807-2662-4be8-952e-0c8f5600f8fc" InformativeScreenshot="8cb8a5516f4621c1a35d4fa6b7ce2b59.png" Reference="akKlNwC0zUCg9cAa6_jkgA/DbgeUCGlykmYo4oediD3qQ" ScopeSelectorArgument="&lt;wnd app='mycrm.exe' cls='#32768' idx='*' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="1004, -909, 310, 638" ContentHash="_m-59NsZSkSG1Dc1jKfVyQ" FilePath="C:\Users\SagarSable\Documents\UiPath\Desktop Apps\mycrm.exe" IconBase64="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" InformativeScreenshot="cda64109a9ad2225288450984a2cae5e.png" Reference="akKlNwC0zUCg9cAa6_jkgA/yONxRF9gAkehrVW-JjiSXw" Selector="&lt;wnd app='mycrm.exe' cls='WindowsForms10.Window.*' title='My CRM (Sample App)' /&gt;" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
   </Sequence>
 </Activity>

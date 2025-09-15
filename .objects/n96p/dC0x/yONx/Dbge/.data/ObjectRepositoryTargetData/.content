@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="0VJHx9_oBEK4TlEspOxzcw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="8fe1a352-4f53-4c2b-86ef-894caef756cc" CvTextArea="37, 157, 132, 12" CvTextArgument="Save Ctrl+S" CvType="Text" DesignTimeRectangle="3, 153, 188, 22" FullSelectorArgument="&lt;ctrl name='File' role='popup menu' /&gt;&lt;ctrl automationid='265' /&gt;" Guid="b3206807-2662-4be8-952e-0c8f5600f8fc" ScopeSelectorArgument="&lt;wnd app='mycrm.exe' cls='#32768' idx='*' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="8cb8a5516f4621c1a35d4fa6b7ce2b59.png" xmlns="">0t7KHOaan8USehHKcqHEUmA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

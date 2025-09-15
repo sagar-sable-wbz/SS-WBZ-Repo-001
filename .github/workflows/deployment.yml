@@ -53,7 +53,7 @@ jobs:
         shell: pwsh
         run:  ${{ github.workspace }}\scripts\UiPathPack.ps1 ${{ github.workspace }}\project.json -destination_folder ${{ github.workspace }}\package -autoVersion -cli_url ${{env.CLI_URL}}
       - name: Upload UiPath Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: Artifacts
           path: |
@@ -66,7 +66,7 @@ jobs:
     #runs-on: self-hosted
     steps: 
       - name: Download UiPath Artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: Artifacts
       - name: Publish Nuget Package to DEV

@@ -72,7 +72,9 @@ jobs:
       - name: Publish Nuget Package to DEV
         shell: powershell
         run: |
-         C:\\uipcli\\tools\\uipcli.exe package deploy -packages_path ${{ github.workspace }}\package -orchestrator_url ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -a ${{env.ORCH_ACC_NAME}} -I ${{env.ORCH_CLIENT_ID}}  -s '${{env.ORCH_USER_KEY}}'  --applicationscope "OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines OR.Monitoring OR.Robots OR.Settings OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users" -o "WBZ Automations"
+         C:\\uipcli\\tools\\uipcli.exe package deploy ${{ github.workspace }}\package ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -A ${{env.ORCH_ACC_NAME}} -I ${{env.ORCH_CLIENT_ID}} -S '${{env.ORCH_USER_KEY}}' --applicationScope "OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines OR.Monitoring OR.Robots OR.Settings OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users" -o "WBZ Automations"
+        
+
 
 
 

@@ -51,7 +51,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Build Nuget Package
         shell: pwsh
-        run:  C:\uipcli\tools\uipcli.exe package pack ${{ github.workspace }}\project.json -destination_folder ${{ github.workspace }}\package -autoVersion
+        run:  C:\\uipcli\\tools\\uipcli.exe package pack ${{ github.workspace }}\project.json -destination_folder ${{ github.workspace }}\package -autoVersion
       - name: Upload UiPath Artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -73,4 +73,5 @@ jobs:
         shell: pwsh
         run: |
          ${{ github.workspace }}\scripts\UiPathDeploy.ps1 -packages_path ${{ github.workspace }}\package -orchestrator_url ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -a ${{env.ORCH_ACC_NAME}} -I ${{env.ORCH_CLIENT_ID}}  -s ${{env.ORCH_USER_KEY}}  --applicationscope "OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines OR.Monitoring OR.Robots OR.Settings OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users" -o "Shared" -cli_url "C:\uipcli\tools\uipcli.exe"
+
 

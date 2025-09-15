@@ -51,7 +51,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Build Nuget Package
         shell: powershell
-        run:  C:\\uipcli\\tools\\uipcli.exe package pack ${{ github.workspace }}\project.json -o ${{ github.workspace }}\package -autoVersion
+        run:  C:\\uipcli\\tools\\uipcli.exe package pack ${{ github.workspace }}\project.json -o ${{ github.workspace }}\package --autoVersion
       - name: Upload UiPath Artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -74,6 +74,7 @@ jobs:
         run: |
          C:\\uipcli\\tools\\uipcli.exe package deploy ${{ github.workspace }}\package ${{env.ORCH_URL}} ${{env.ORCH_TENANT}} -A ${{env.ORCH_ACC_NAME}} -I ${{env.ORCH_CLIENT_ID}} -S '${{env.ORCH_USER_KEY}}' --applicationScope "OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines OR.Monitoring OR.Robots OR.Settings OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users" -o "WBZ Automations"
         
+
 
 
 

@@ -140,7 +140,7 @@
               <av:PointCollection x:Key="ConnectorLocation">170,445 170,474.99999999999994 240,474.99999999999994 240,505</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="If the transaction item is processed without any exception, its status is updated as Successful." DisplayName="Success" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence sap2010:Annotation.AnnotationText="If the transaction item is processed without any exception, its status is updated as Successful." DisplayName="Success" sap:VirtualizedContainerService.HintSize="494.4,1924" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -148,14 +148,14 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[in_TransactionItem isNot Nothing AndAlso (in_TransactionItem.GetType is GetType(Uipath.Core.QueueItem))]" DisplayName="If TransactionItem is a QueueItem (Success)" sap:VirtualizedContainerService.HintSize="460.8,1334.4" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[in_TransactionItem isNot Nothing AndAlso (in_TransactionItem.GetType is GetType(Uipath.Core.QueueItem))]" DisplayName="If TransactionItem is a QueueItem (Success)" sap:VirtualizedContainerService.HintSize="460.8,1312" sap2010:WorkflowViewState.IdRef="If_4">
               <If.Then>
-                <ui:RetryScope DisplayName="Retry Set Transaction Status (Success)" sap:VirtualizedContainerService.HintSize="459.2,1084" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[Cint(in_Config(&quot;RetryNumberSetTransactionStatus&quot;))]">
+                <ui:RetryScope DisplayName="Retry Set Transaction Status (Success)" sap:VirtualizedContainerService.HintSize="459.2,1061.6" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[Cint(in_Config(&quot;RetryNumberSetTransactionStatus&quot;))]">
                   <ui:RetryScope.ActivityBody>
                     <ActivityAction>
-                      <TryCatch DisplayName="Try Catch Set Transaction Status (Success)" sap:VirtualizedContainerService.HintSize="417.6,908" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+                      <TryCatch DisplayName="Try Catch Set Transaction Status (Success)" sap:VirtualizedContainerService.HintSize="417.6,885.6" sap2010:WorkflowViewState.IdRef="TryCatch_11">
                         <TryCatch.Try>
-                          <Sequence sap:VirtualizedContainerService.HintSize="416,372" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="416,372" sap2010:WorkflowViewState.IdRef="Sequence_29">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
